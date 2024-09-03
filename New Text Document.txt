@@ -1,0 +1,134 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+
+
+
+
+---------------------------------------------------------------------------------
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz</h1>
+
+    <h2>Question 1:</h2>
+    <p>What is the capital of India?</p>
+    <ul>
+        <li><input type="radio" name="q1" value="Delhi"> Delhi</li>
+        <li><input type="radio" name="q1" value="Mumbai"> Mumbai</li>
+        <li><input type="radio" name="q1" value="Kolkata"> Kolkata</li>
+        <li><input type="radio" name="q1" value="Chennai"> Chennai</li>
+    </ul>
+
+    <h2>Question 2:</h2>
+    <p>Which is the largest state in India?</p>
+    <ul>
+        <li><input type="radio" name="q2" value="Rajasthan"> Rajasthan</li>
+        <li><input type="radio" name="q2" value="Madhya Pradesh"> Madhya Pradesh</li>
+        <li><input type="radio" name="q2" value="Maharashtra"> Maharashtra</li>
+        <li><input type="radio" name="q2" value="Uttar Pradesh"> Uttar Pradesh</li>
+    </ul>
+
+    <button type="submit" onclick="submitQuiz()">Submit</button>
+
+    <div id="result" style="display: none;">
+        <h2>Results:</h2>
+        <p id="score"></p>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            var q1Answer = document.querySelector('input[name="q1"]:checked').value;
+            var q2Answer = document.querySelector('input[name="q2"]:checked').value;
+
+            var correctAnswers = ["Delhi", "Rajasthan"];
+            var score = 0;
+
+            if (q1Answer === correctAnswers[0]) {
+                score++;
+            }
+            if (q2Answer === correctAnswers[1]) {
+                score++;
+            }
+
+            document.getElementById("result").style.display = "block";
+            document.getElementById("score").textContent = "You scored " + score + " out of 2.";
+        }
+    </script>
+</body>
+</html>
+
+--------------------------------------------------------------------------------------------
